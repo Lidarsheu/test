@@ -1,7 +1,9 @@
 #include <DHT.h>
 #include <LiquidCrystal_I2C.h>
+
 DHT dht(4, DHT11);
 LiquidCrystal_I2C lcd_i2c(0x27);
+
 void setup()
 {
   Serial.begin(9600);
@@ -34,5 +36,6 @@ void loop()
   lcd_i2c.print("SM=");
   lcd_i2c.setCursor(3,1);
   lcd_i2c.print(analogRead(14));
+  
   delay(1000);
 }
