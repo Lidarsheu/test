@@ -10,6 +10,7 @@ void setup()
   dht.begin();
   lcd_i2c.begin(16, 2);
   pinMode(3, INPUT);
+  lcd_i2c.clear();
 }
 
 void loop()
@@ -21,15 +22,13 @@ void loop()
   Serial.print("土壤濕度=");
   Serial.println(analogRead(14));
   
-  lcd_i2c.clear();
-
   lcd_i2c.setCursor(0,0);
   lcd_i2c.print("T=");
   lcd_i2c.setCursor(2,0);
   lcd_i2c.print(dht.readTemperature());
-  lcd_i2c.setCursor(7,0);
+  lcd_i2c.setCursor(8,0);
   lcd_i2c.print("H=");
-  lcd_i2c.setCursor(9,0);
+  lcd_i2c.setCursor(10,0);
   lcd_i2c.print(dht.readHumidity());
 
   lcd_i2c.setCursor(0,1);
