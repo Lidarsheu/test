@@ -19,7 +19,7 @@ void loop()
   Serial.print("濕度=");
   Serial.println(dht.readHumidity());
   Serial.print("土壤濕度=");
-  Serial.print(analogRead(14));
+  Serial.println(analogRead(14));
   
   lcd_i2c.clear();
 
